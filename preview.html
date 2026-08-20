@@ -153,6 +153,10 @@ background: #BCBCBC;
 .osechi-product__header p { margin: 0; color: var(--osechi-muted); font-size: .86rem; }
 .osechi-product__header h3 { color: #fff; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; }.osechi-product__header p { color: var(--osechi-gold-light); }
 .osechi-product__body { display: grid; grid-template-columns: minmax(280px, 42%) 1fr; gap: clamp(24px, 4vw, 44px); align-items: start; }
+.osechi-product__body--kiwami { grid-template-columns: minmax(0, 1fr) minmax(260px, 42%); grid-template-areas: "content media" "caution caution"; gap: 24px clamp(28px, 4vw, 44px); }
+.osechi-product__body--kiwami .osechi-product__content { grid-area: content; }
+.osechi-product__body--kiwami .osechi-product__media { grid-area: media; order: initial; }
+.osechi-product__body--kiwami .osechi-caution { grid-area: caution; margin-top: 0; }
 .osechi-product:nth-of-type(even) .osechi-product__media { order: 2; }
 .osechi-product__media { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: var(--osechi-cream); box-shadow: 14px 14px 0 var(--osechi-cream); }
 .osechi-product__media img { width: 100%; height: 100%; object-fit: cover; }
@@ -177,7 +181,7 @@ background: #BCBCBC;
   .osechi-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.osechi-summary-image-card, .osechi-summary-card { grid-column: span 1; }.osechi-summary-card:last-child { grid-column: 1 / -1; }
   .osechi-type-grid { grid-template-columns: repeat(2, 1fr); }
   .osechi-type-card:last-child { grid-column: 1 / -1; }
-  .osechi-product__body { grid-template-columns: 1fr; }.osechi-product:nth-of-type(even) .osechi-product__media { order: initial; }.osechi-product__media { max-width: 520px; margin: 0 auto; }
+  .osechi-product__body { grid-template-columns: 1fr; }.osechi-product__body--kiwami { grid-template-areas: "media" "content" "caution"; }.osechi-product:nth-of-type(even) .osechi-product__media { order: initial; }.osechi-product__media { max-width: 520px; margin: 0 auto; }
   .osechi-cta-group--three { grid-template-columns: 1fr; }
   .osechi-final-grid { grid-template-columns: repeat(2, 1fr); }.osechi-final-grid a:last-child { grid-column: 1 / -1; }
 }
@@ -369,14 +373,14 @@ background: #BCBCBC;
 
     <article id="osechi-kiwami" class="osechi-product">
       <header class="osechi-product__header"><span class="osechi-rank osechi-rank--large">1位</span><div><p>匠本舗</p><h3>京都祇園料亭「岩元」監修六段重「極」</h3></div></header>
-      <div class="osechi-product__body">
+      <div class="osechi-product__body osechi-product__body--kiwami">
         <figure class="osechi-product__media"><img src="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2026/08/2027おせち匠本舗極.jpg" alt="匠本舗 京都祇園料亭 岩元監修六段重 極" width="450" height="450" loading="lazy" decoding="async" /></figure>
         <div class="osechi-product__content">
           <p class="osechi-product__catch">親戚や家族が集まる、7〜8人のお正月に向く冷蔵六段重です。</p>
           <dl class="osechi-specs"><div><dt>人数</dt><dd>7〜8人前</dd></div><div><dt>品数</dt><dd>80品</dd></div><div><dt>保存</dt><dd>冷蔵</dd></div><div><dt>価格</dt><dd>公式サイトで確認</dd></div></dl>
           <div class="osechi-points"><h4>選ぶポイント</h4><ul><li>大人数で分けやすい六段重</li><li>解凍の手間がない冷蔵おせち</li></ul></div>
-          <div class="osechi-caution"><strong>確認点</strong><p>2027年版は80品目。価格・在庫・早割期限は変動するため、予約前に公式サイトで最新条件をご確認ください。</p></div>
         </div>
+        <div class="osechi-caution"><strong>確認点</strong><p>2027年版は80品目。価格・在庫・早割期限は変動するため、予約前に公式サイトで最新条件をご確認ください。</p></div>
       </div>
       <div class="osechi-cta-group">
         <a class="osechi-button osechi-button--official" href="https://px.a8.net/svt/ejp?a8mat=2ZNPW2+90HR7U+1ZWM+HUKPU&amp;a8ejpredirect=https%3A%2F%2Fskynet-c.jp%2Fgoods%2F260.html" target="_blank" rel="nofollow sponsored noopener">公式サイトで「極」の最新価格・在庫を確認する</a>
