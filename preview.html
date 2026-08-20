@@ -121,6 +121,18 @@ background: #BCBCBC;
 .osechi-summary-card { grid-column: span 2; position: relative; min-height: 220px; padding: 26px; background: linear-gradient(145deg, #fff, var(--osechi-ivory)); border: 1px solid var(--osechi-border); border-top: 4px solid var(--osechi-gold); box-shadow: 0 8px 24px rgba(62,43,27,.09); }
 .osechi-summary-card p { margin: 8px 0; font-size: .92rem; }.osechi-summary-card__fit { min-height: 3.4em; font-weight: 700; }
 .osechi-summary-card a { color: var(--osechi-wine); font-weight: 700; }
+.osechi-summary-card--featured { display: flex; flex-direction: column; align-self: start; height: 361px; min-height: 361px; line-height: 1.45; }
+.osechi-summary-card--featured > p { padding: 0 !important; }
+.osechi-summary-card--featured > p:empty { display: none !important; }
+.osechi-summary-card--featured > .osechi-rank { display: block; width: 100%; margin: 0 0 14px; padding: 6px 14px; font-size: 1rem; }
+.osechi-summary-card--featured h3 { margin: 0 0 14px !important; padding: 12px 14px 8px; color: var(--osechi-wine-dark); line-height: 1.3; background: var(--osechi-ivory); border-bottom: 3px double var(--osechi-gold); }
+.osechi-summary-card--featured .osechi-summary-card__fit { min-height: 0; margin: 0 0 12px; font-size: .92rem; line-height: 1.45; }
+.osechi-summary-card--featured > p:not(.osechi-summary-card__fit, :empty) { margin: 0 0 12px; font-size: .86rem; line-height: 1.45; }
+.osechi-summary-card--featured a { font-size: .92rem; }
+.osechi-summary-card--featured > a { align-self: flex-start; margin: 0 0 12px; }
+.osechi-summary-card__media { align-self: center; width: 44%; margin: auto auto 0 !important; padding-top: 0; line-height: 0; }
+.osechi-summary-card__media img { display: block; width: 100%; height: auto; margin: 0 !important; aspect-ratio: 1.115 / 1; object-fit: cover; border: 1px solid var(--osechi-gold); }
+.osechi-summary-card__media > br { display: none !important; }
 .osechi-summary-card { transition: transform .2s ease, box-shadow .2s ease; }
 .osechi-summary-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(62,43,27,.14); }
 .osechi-rank { display: inline-block; margin: 0 0 8px; padding: 2px 10px; color: #fff; font-size: .82rem; font-weight: 700; background: var(--osechi-gold); border-radius: 999px; }
@@ -180,6 +192,7 @@ background: #BCBCBC;
   .osechi-summary-image-card, .osechi-summary-card, .osechi-summary-card:last-child { grid-column: auto; }
   .osechi-type-grid { grid-template-columns: 1fr; }.osechi-type-card:last-child { grid-column: auto; }
   .osechi-summary-card__fit { min-height: 0; }
+  .osechi-summary-card--featured { height: auto; min-height: 0; }
   .osechi-table-wrap { overflow: visible; border: 0; }
   .osechi-comparison-table { min-width: 0; border: 0; }
   .osechi-comparison-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
@@ -222,19 +235,25 @@ background: #BCBCBC;
     <h2>30秒で分かるおすすめ5商品</h2>
     <p class="osechi-section__intro">順位だけでなく、食べる人数や保存方法が合う商品を選ぶことが大切です。まずは、ご家庭に近い条件から候補を絞ってください。</p>
     <div class="osechi-summary-grid">
-      <article class="osechi-summary-card osechi-summary-card--first">
+      <article class="osechi-summary-card osechi-summary-card--featured osechi-summary-card--first">
         <span class="osechi-rank">1位</span>
         <h3>匠本舗「極」</h3>
         <p class="osechi-summary-card__fit">7〜8人で囲む大人数のお正月に</p>
         <p>冷蔵・和風六段重</p>
         <a href="#osechi-kiwami">詳しく見る</a>
+        <figure class="osechi-summary-card__media">
+          <img src="assets/osechi-summary-rank1-kiwami-photo-2027.jpg" alt="匠本舗『極』の六段重おせちの盛り付け例" width="1254" height="1124" loading="lazy" decoding="async" />
+        </figure>
       </article>
-      <article class="osechi-summary-card">
+      <article class="osechi-summary-card osechi-summary-card--featured osechi-summary-card--second">
         <span class="osechi-rank">2位</span>
         <h3>博多久松「博多」</h3>
         <p class="osechi-summary-card__fit">4〜5人で和洋折衷を楽しみたい方に</p>
         <p>冷凍・和洋折衷三段重</p>
         <a href="#osechi-hakata">詳しく見る</a>
+        <figure class="osechi-summary-card__media">
+          <img src="assets/osechi-summary-rank2-hakata-2027.jpg" alt="博多久松『博多』の和洋折衷三段重おせちの盛り付け例" width="1280" height="720" loading="lazy" decoding="async" />
+        </figure>
       </article>
       <article class="osechi-summary-card">
         <span class="osechi-rank">3位</span>
