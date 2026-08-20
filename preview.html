@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>おせちトップページ ローカルプレビュー</title><style>body{margin:0;padding:32px 16px;background:#fff;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue","Yu Gothic",Meiryo,sans-serif}main{max-width:960px;margin:auto}
+<!--トップページタイトル非表示 -->
+.home .entry-title {
+  display: none;
+}
+
+<!--テーブルスクロール -->
+table{
+width:100%;
+}
+.scroll{
+overflow: auto;
+white-space: nowrap;
+}
+.scroll::-webkit-scrollbar{
+height: 5px;
+}
+.scroll::-webkit-scrollbar-track{
+background: #F1F1F1;
+}
+.scroll::-webkit-scrollbar-thumb {
+background: #BCBCBC;
+}
+
+<!--箇条書きの色 -->
+.cps-post-main ul > li:before,
+.cps-post-main ol > li:before {
+    background-color: #006400!important;
+}
+
+/* トップページにある一般的な目次を非表示 */
+.home #toc_container,
+.home #ez-toc-container,
+.home .ez-toc-container,
+.home .toc,
+.home .p-toc {
+  display: none !important;
+}
+
+/* 2027年おせちトップページ専用CSS
+ * 対象: 固定ページ30806、および将来ホームに設定した場合の同一HTML
+ * 更新: 2026-08-20
+ */
+.page-id-30806 .entry-title,
+.home .entry-title,
+.page-id-30806 #toc_container,
+.page-id-30806 #ez-toc-container,
+.page-id-30806 .ez-toc-container,
+.page-id-30806 .toc,
+.page-id-30806 .p-toc,
+.home #toc_container,
+.home #ez-toc-container,
+.home .ez-toc-container,
+.home .toc,
+.home .p-toc {
+  display: none !important;
+}
+
+/* 2027年おせちトップページ専用。すべて osechi- 接頭辞でJINとの衝突を抑制 */
+.osechi-page {
+  --osechi-wine: #711f2b;
+  --osechi-wine-dark: #50131d;
+  --osechi-gold: #b58a32;
+  --osechi-gold-light: #e8d7a6;
+  --osechi-ivory: #fbf8f0;
+  --osechi-cream: #f5efe2;
+  --osechi-olive: #31280e;
+  --osechi-text: #332f2c;
+  --osechi-muted: #716a64;
+  --osechi-border: #ded5c6;
+  box-sizing: border-box;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--osechi-text);
+  font-size: 17px;
+  line-height: 1.8;
+}
+.osechi-page *, .osechi-page *::before, .osechi-page *::after { box-sizing: inherit; }
+.osechi-page img { max-width: 100%; height: auto; }
+.osechi-page a { text-underline-offset: .18em; }
+/* JINが本文前に挿入するタイトル・SNS・広告ラベルを、このトップページだけ非表示 */
+.page-id-30806 .cps-post-header,
+.page-id-30806 .share-top,
+.page-id-30806 article > .clearfix,
+.page-id-30806 article > .c--labeling-act,
+.home .cps-post-header,
+.home .share-top,
+.home article > .clearfix,
+.home article > .c--labeling-act { display: none !important; }
+.osechi-visually-hidden { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+.osechi-page h2 { position: relative; display: flex; align-items: center; justify-content: center; min-height: 76px; margin: 0 0 1.4em; padding: 12px 0 18px; color: var(--osechi-wine-dark); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: clamp(1.55rem, 3vw, 2.15rem); line-height: 1.45; text-align: center; border-bottom: 0; }
+.osechi-page h2::after { position: absolute; bottom: 0; left: 50%; width: 72px; height: 2px; content: ""; background: linear-gradient(90deg, transparent, var(--osechi-gold), transparent); transform: translateX(-50%); }
+.osechi-page h3 { margin: 0; color: var(--osechi-wine-dark); font-size: 1.25rem; line-height: 1.5; }
+.osechi-page h4 { margin: 0 0 .5em; color: var(--osechi-wine-dark); font-size: 1.05rem; }
+.osechi-page p { margin: 0 0 1em; }
+.osechi-hero { position: relative; min-height: 0; aspect-ratio: 3 / 1; overflow: hidden; background-color: #b50012; background-image: url("https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2026/08/osechi-blog-header-2027-original-text-v5.png?v=20260820v5"); background-position: center; background-size: cover; background-repeat: no-repeat; border: 1px solid #9b0715; box-shadow: 0 12px 34px rgba(64, 9, 15, .18); }
+.osechi-hero::before { display: none; }
+.osechi-kicker { margin-bottom: 12px !important; color: var(--osechi-gold); font-size: .78rem; font-weight: 700; letter-spacing: .2em; }
+.osechi-disclosure { margin: 24px 0; padding: 5px 16px; background: var(--osechi-ivory); border-left: 4px solid var(--osechi-gold); }
+.osechi-disclosure strong { display: block; line-height: 1.4; }
+.osechi-disclosure p { margin: 0; padding: 0 !important; font-size: .92rem; line-height: 1.4; }
+.osechi-disclosure p:empty { display: none; }
+.osechi-trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); margin: 30px 0 0; background: var(--osechi-wine-dark); border-top: 3px solid var(--osechi-gold); }
+.osechi-trust-strip div { display: flex; flex-direction: column; padding: 20px 16px; color: #fff; text-align: center; border-right: 1px solid rgba(255,255,255,.16); }.osechi-trust-strip div:last-child { border-right: 0; }.osechi-trust-strip strong { color: var(--osechi-gold-light); font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.08rem; }.osechi-trust-strip span { margin-top: 3px; font-size: .8rem; }
+.osechi-section { margin: clamp(64px, 10vw, 110px) 0; scroll-margin-top: 28px; }
+.osechi-section--tinted { position: relative; padding: clamp(34px, 6vw, 66px); background: var(--osechi-ivory); border: 0; }
+.osechi-section--tinted::before { position: absolute; top: 0; right: 0; bottom: 0; width: 8px; content: ""; background: linear-gradient(var(--osechi-wine), var(--osechi-gold)); }
+.osechi-section-label { margin: 0 0 8px !important; color: var(--osechi-gold); font-family: Georgia, serif; font-size: .72rem; font-weight: 700; text-align: center; letter-spacing: .24em; }
+.osechi-section__intro { max-width: 780px; margin: -10px 0 26px !important; }
+.osechi-button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 22px; color: #fff !important; font-weight: 700; line-height: 1.5; text-align: center; text-decoration: none !important; border: 1px solid transparent; border-radius: 6px; box-shadow: 0 3px 0 rgba(0,0,0,.13); transition: filter .2s, transform .2s; }
+.osechi-button:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.osechi-button:focus-visible, .osechi-page a:focus-visible { outline: 3px solid #2673d9; outline-offset: 3px; }
+.osechi-button--primary, .osechi-button--official { background: var(--osechi-wine); border-color: var(--osechi-gold); }
+.osechi-button--amazon { color: #241b0e !important; background: #f3b33d; }
+.osechi-button--rakuten { background: #a81324; }
+.osechi-summary-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; }
+.osechi-summary-image-card { grid-column: span 3; display: block; overflow: hidden; aspect-ratio: 3 / 2; background: #fff; border: 1px solid var(--osechi-gold); box-shadow: 0 8px 24px rgba(62,43,27,.09); }
+.osechi-summary-image-card img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.osechi-summary-grid > br, .osechi-summary-grid > p:empty, .osechi-summary-image-card > br { display: none !important; }
+.osechi-summary-card { grid-column: span 2; position: relative; min-height: 220px; padding: 26px; background: linear-gradient(145deg, #fff, var(--osechi-ivory)); border: 1px solid var(--osechi-border); border-top: 4px solid var(--osechi-gold); box-shadow: 0 8px 24px rgba(62,43,27,.09); }
+.osechi-summary-card p { margin: 8px 0; font-size: .92rem; }.osechi-summary-card__fit { min-height: 3.4em; font-weight: 700; }
+.osechi-summary-card a { color: var(--osechi-wine); font-weight: 700; }
+.osechi-summary-card { transition: transform .2s ease, box-shadow .2s ease; }
+.osechi-summary-card:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(62,43,27,.14); }
+.osechi-rank { display: inline-block; margin: 0 0 8px; padding: 2px 10px; color: #fff; font-size: .82rem; font-weight: 700; background: var(--osechi-gold); border-radius: 999px; }
+.osechi-rank--large { flex: 0 0 auto; margin: 0; padding: 8px 13px; font-size: 1rem; }
+.osechi-table-wrap { overflow-x: auto; border: 1px solid var(--osechi-border); }
+.osechi-comparison-table { width: 100% !important; min-width: 760px; margin: 0 !important; border-collapse: collapse; table-layout: auto; }
+.osechi-comparison-table th, .osechi-comparison-table td { padding: 14px 12px; text-align: left; vertical-align: middle; border: 0; border-bottom: 1px solid var(--osechi-border); }
+.osechi-comparison-table thead th { color: #fff; background: var(--osechi-wine); }.osechi-comparison-table tbody th { min-width: 190px; color: var(--osechi-wine-dark); background: var(--osechi-ivory); }
+.osechi-comparison-table .osechi-rank { margin: 0 7px 0 0; }
+.osechi-needs-check { display: inline-block; padding: 1px 8px; color: #7a3c00; font-size: .85rem; font-weight: 700; background: #fff3d1; border: 1px solid #e0b35d; border-radius: 3px; }
+.osechi-note { color: var(--osechi-muted); font-size: .88rem; }
+.osechi-type-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.osechi-type-card { display: flex; flex-direction: column; min-height: 118px; padding: 18px; color: var(--osechi-text) !important; text-decoration: none !important; background: #fff; border: 1px solid var(--osechi-border); border-bottom: 3px solid var(--osechi-gold); }
+.osechi-type-card strong { color: var(--osechi-wine-dark); }.osechi-type-card span { margin-top: auto; font-size: .9rem; }
+.osechi-product { position: relative; margin: 0 0 clamp(70px, 10vw, 112px); padding: clamp(24px, 5vw, 46px); background: #fff; border: 0; box-shadow: 0 12px 38px rgba(55,36,24,.1); scroll-margin-top: 28px; }
+.osechi-product::after { position: absolute; right: 22px; bottom: -18px; width: 72px; height: 36px; content: ""; opacity: .26; background: radial-gradient(circle at 50% 100%, transparent 58%, var(--osechi-gold) 60%, transparent 64%); }
+.osechi-product__header { display: flex; align-items: center; gap: 15px; margin: -46px -46px 34px; padding: 22px 30px; background: var(--osechi-wine-dark); border-bottom: 3px solid var(--osechi-gold); }
+.osechi-product__header p { margin: 0; color: var(--osechi-muted); font-size: .86rem; }
+.osechi-product__header h3 { color: #fff; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; }.osechi-product__header p { color: var(--osechi-gold-light); }
+.osechi-product__body { display: grid; grid-template-columns: minmax(280px, 42%) 1fr; gap: clamp(24px, 4vw, 44px); align-items: start; }
+.osechi-product:nth-of-type(even) .osechi-product__media { order: 2; }
+.osechi-product__media { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: var(--osechi-cream); box-shadow: 14px 14px 0 var(--osechi-cream); }
+.osechi-product__media img { width: 100%; height: 100%; object-fit: cover; }
+.osechi-product__catch { color: var(--osechi-wine-dark); font-size: 1.08rem; font-weight: 700; }
+.osechi-specs { display: grid; grid-template-columns: repeat(2, 1fr); margin: 18px 0; border-top: 1px solid var(--osechi-border); border-left: 1px solid var(--osechi-border); }
+.osechi-specs div { display: grid; grid-template-columns: 72px 1fr; margin: 0; border-right: 1px solid var(--osechi-border); border-bottom: 1px solid var(--osechi-border); }
+.osechi-specs dt, .osechi-specs dd { margin: 0; padding: 9px 10px; }.osechi-specs dt { font-weight: 700; background: var(--osechi-ivory); }
+.osechi-points { margin: 18px 0; }.osechi-points ul { margin: 0; padding-left: 1.4em; }
+.osechi-caution { padding: 14px 16px; font-size: .9rem; background: #fff9e9; border-left: 3px solid var(--osechi-gold); }.osechi-caution p { margin: 3px 0 0; }
+.osechi-cta-group { display: grid; grid-template-columns: minmax(260px, 620px); justify-content: center; gap: 12px; margin-top: 26px; }
+.osechi-cta-group--marketplaces { grid-template-columns: repeat(2, minmax(220px, 1fr)); }.osechi-cta-group--three { grid-template-columns: repeat(3, 1fr); }
+.osechi-alt-links, .osechi-related { margin: 16px 0 0 !important; font-size: .86rem; text-align: center; }.osechi-alt-links a, .osechi-related a, .osechi-text-link { color: var(--osechi-wine); font-weight: 700; }
+.osechi-check-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; margin: 0; padding-left: 1.5em; }.osechi-check-list li { padding: 5px 0; }
+.osechi-criteria-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0; list-style: none; }.osechi-criteria-list li { padding: 12px; background: var(--osechi-ivory); border-left: 3px solid var(--osechi-gold); }
+.osechi-author { padding: clamp(24px, 5vw, 44px); background: var(--osechi-ivory); border: 1px solid var(--osechi-border); }.osechi-author__body { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: start; }.osechi-author__image { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: #eee7da; border: 3px solid var(--osechi-gold-light); border-radius: 50%; }.osechi-author__image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.osechi-faq-item { padding: 22px 0; border-bottom: 1px solid var(--osechi-border); }.osechi-faq-item:first-child { border-top: 1px solid var(--osechi-border); }.osechi-faq-item h3 { position: relative; padding-left: 34px; }.osechi-faq-item h3::before { position: absolute; left: 0; content: "Q"; color: var(--osechi-gold); font-family: Georgia, serif; font-size: 1.3rem; }.osechi-faq-item p { margin: 10px 0 0; padding-left: 34px; }
+.osechi-final { position: relative; overflow: hidden; padding: clamp(36px, 7vw, 70px); color: #fff; background: linear-gradient(135deg, #37100f, var(--osechi-wine-dark)); border: 1px solid var(--osechi-gold); }.osechi-final::before { position: absolute; top: -100px; right: -100px; width: 260px; height: 260px; content: ""; border: 1px solid rgba(232,215,166,.2); border-radius: 50%; }.osechi-final h2 { color: #fff; }.osechi-final-grid { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }.osechi-final-grid a { display: flex; flex-direction: column; padding: 18px 10px; color: var(--osechi-text) !important; text-align: center; text-decoration: none !important; background: var(--osechi-ivory); border-top: 3px solid var(--osechi-gold); }.osechi-final-grid span { font-size: .88rem; }
+.osechi-sp-only { display: none; }
+
+@media (max-width: 800px) {
+  .osechi-page { font-size: 16px; }
+  .osechi-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.osechi-summary-image-card, .osechi-summary-card { grid-column: span 1; }.osechi-summary-card:last-child { grid-column: 1 / -1; }
+  .osechi-type-grid { grid-template-columns: repeat(2, 1fr); }
+  .osechi-type-card:last-child { grid-column: 1 / -1; }
+  .osechi-product__body { grid-template-columns: 1fr; }.osechi-product:nth-of-type(even) .osechi-product__media { order: initial; }.osechi-product__media { max-width: 520px; margin: 0 auto; }
+  .osechi-cta-group--three { grid-template-columns: 1fr; }
+  .osechi-final-grid { grid-template-columns: repeat(2, 1fr); }.osechi-final-grid a:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .osechi-page { margin-right: -2px; margin-left: -2px; line-height: 1.75; }
+  .osechi-page h2 { min-height: 66px; padding: 10px 0 16px; }
+  .osechi-sp-only { display: initial; }
+  .osechi-section { margin: 52px 0; }
+  .osechi-hero { min-height: 0; aspect-ratio: 3 / 1; background-position: center; }
+  .osechi-trust-strip { grid-template-columns: 1fr; }.osechi-trust-strip div { padding: 14px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.14); }
+  .osechi-summary-grid { grid-template-columns: 1fr; gap: 10px; }
+  .osechi-summary-image-card, .osechi-summary-card, .osechi-summary-card:last-child { grid-column: auto; }
+  .osechi-type-grid { grid-template-columns: 1fr; }.osechi-type-card:last-child { grid-column: auto; }
+  .osechi-summary-card__fit { min-height: 0; }
+  .osechi-table-wrap { overflow: visible; border: 0; }
+  .osechi-comparison-table { min-width: 0; border: 0; }
+  .osechi-comparison-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+  .osechi-comparison-table, .osechi-comparison-table tbody, .osechi-comparison-table tr, .osechi-comparison-table th, .osechi-comparison-table td { display: block; width: 100%; }
+  .osechi-comparison-table tr { margin-bottom: 16px; background: #fff; border: 1px solid var(--osechi-border); box-shadow: 0 4px 14px rgba(55,36,24,.06); }
+  .osechi-comparison-table tbody th { padding: 14px; border-bottom: 2px solid var(--osechi-gold); }
+  .osechi-comparison-table td { display: grid; grid-template-columns: 92px 1fr; padding: 9px 14px; }
+  .osechi-comparison-table td::before { content: attr(data-label); font-weight: 700; }
+  .osechi-product { padding: 18px; }.osechi-product__header { margin: -18px -18px 24px; padding: 16px; }.osechi-product__media { box-shadow: 8px 8px 0 var(--osechi-cream); }
+  .osechi-specs { grid-template-columns: 1fr; }
+  .osechi-cta-group--marketplaces { grid-template-columns: 1fr; }
+  .osechi-check-list, .osechi-criteria-list { grid-template-columns: 1fr; }
+  .osechi-author__body { grid-template-columns: 1fr; }.osechi-author__image { width: 130px; margin: 0 auto; }
+  .osechi-final-grid { grid-template-columns: 1fr; }.osechi-final-grid a:last-child { grid-column: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .osechi-button, .osechi-summary-card { transition: none; } }
+</style></head><body class="page-id-30806"><main><!--
+  2027年おせちトップページ／WordPressクラシックエディタ「テキスト」タブ貼り付け用
+  前提：固定ページタイトルがH1としてテーマから出力されます。
+  注意：公開前に pre-publication-checklist.md を確認してください。
+-->
+<div class="osechi-page">
+  <section class="osechi-hero" aria-label="おせち通販おすすめ5商品のヘッダー画像">
+    <span class="osechi-visually-hidden">2027年おせち通販おすすめ5商品</span>
+  </section>
+
+  <aside class="osechi-disclosure" aria-label="広告掲載について">
+    <strong>広告掲載について</strong>
+    <p>この記事にはアフィリエイト広告が含まれています。リンク先で商品を予約・購入された場合、当サイトが紹介料を受け取ることがあります。価格・在庫・配送条件は変更されるため、申込み前に各販売先で最新情報をご確認ください。</p>
+  </aside>
+
+  <div class="osechi-trust-strip" aria-label="このページの比較方針">
+    <div><strong>2027年版</strong><span>公式・販売先情報を確認</span></div>
+    <div><strong>5社を比較</strong><span>人数・保存・料理タイプで整理</span></div>
+    <div><strong>広告を明示</strong><span>購入前の確認事項も掲載</span></div>
+  </div>
+
+  <section id="osechi-conclusion" class="osechi-section">
+    <p class="osechi-section-label">QUICK GUIDE</p>
+    <h2>30秒で分かるおすすめ5商品</h2>
+    <p class="osechi-section__intro">順位だけでなく、食べる人数や保存方法が合う商品を選ぶことが大切です。まずは、ご家庭に近い条件から候補を絞ってください。</p>
+    <div class="osechi-summary-grid">
+      <article class="osechi-summary-card osechi-summary-card--first">
+        <span class="osechi-rank">1位</span>
+        <h3>匠本舗「極」</h3>
+        <p class="osechi-summary-card__fit">7〜8人で囲む大人数のお正月に</p>
+        <p>冷蔵・和風六段重</p>
+        <a href="#osechi-kiwami">詳しく見る</a>
+      </article>
+      <article class="osechi-summary-card">
+        <span class="osechi-rank">2位</span>
+        <h3>博多久松「博多」</h3>
+        <p class="osechi-summary-card__fit">4〜5人で和洋折衷を楽しみたい方に</p>
+        <p>冷凍・和洋折衷三段重</p>
+        <a href="#osechi-hakata">詳しく見る</a>
+      </article>
+      <article class="osechi-summary-card">
+        <span class="osechi-rank">3位</span>
+        <h3>千賀屋「おもてなし」</h3>
+        <p class="osechi-summary-card__fit">解凍不要の和風おせちを選びたい方に</p>
+        <p>冷蔵・和風三段重</p>
+        <a href="#osechi-omotenashi">詳しく見る</a>
+      </article>
+      <article class="osechi-summary-card">
+        <span class="osechi-rank">4位</span>
+        <h3>板前魂「花籠」</h3>
+        <p class="osechi-summary-card__fit">3人前・1万円前後を目安にしたい方に</p>
+        <p>冷凍・和洋風三段重</p>
+        <a href="#osechi-hanakago">詳しく見る</a>
+      </article>
+      <article class="osechi-summary-card">
+        <span class="osechi-rank">5位</span>
+        <h3>Oisix「上高砂」</h3>
+        <p class="osechi-summary-card__fit">3〜4人で和洋の料理を楽しみたい方に</p>
+        <p>冷凍・和洋折衷三段重</p>
+        <a href="#osechi-kamitakasago">詳しく見る</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="osechi-comparison" class="osechi-section">
+    <p class="osechi-section-label">COMPARISON</p>
+    <h2>人気5商品の違いを比較</h2>
+    <p class="osechi-section__intro">価格・早割期限は販売先や予約時期により変わります。表では確認済みの基本仕様を中心に比較し、最新価格は各販売先で確認できるようにしています。</p>
+
+    <div class="osechi-table-wrap" role="region" aria-label="おすすめおせち5商品比較" tabindex="0">
+      <table class="osechi-comparison-table">
+        <thead>
+          <tr>
+            <th scope="col">順位・商品</th>
+            <th scope="col">人数</th>
+            <th scope="col">品数</th>
+            <th scope="col">保存</th>
+            <th scope="col">料理</th>
+            <th scope="col">価格</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><span class="osechi-rank">1位</span>匠本舗「極」</th>
+            <td data-label="人数">7〜8人前</td>
+            <td data-label="品数">80品</td>
+            <td data-label="保存">冷蔵</td>
+            <td data-label="料理">和風</td>
+            <td data-label="価格">公式サイトで確認</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="osechi-rank">2位</span>博多久松「博多」</th>
+            <td data-label="人数">4〜5人前</td>
+            <td data-label="品数">50品</td>
+            <td data-label="保存">冷凍</td>
+            <td data-label="料理">和洋折衷</td>
+            <td data-label="価格">販売先で確認</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="osechi-rank">3位</span>千賀屋「おもてなし」</th>
+            <td data-label="人数">4〜5人前</td>
+            <td data-label="品数">58品</td>
+            <td data-label="保存">冷蔵</td>
+            <td data-label="料理">和風</td>
+            <td data-label="価格">販売先で確認</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="osechi-rank">4位</span>板前魂「花籠」</th>
+            <td data-label="人数">3人前</td>
+            <td data-label="品数">34品</td>
+            <td data-label="保存">冷凍</td>
+            <td data-label="料理">和洋風</td>
+            <td data-label="価格">販売先で確認</td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="osechi-rank">5位</span>Oisix「上高砂」</th>
+            <td data-label="人数">3〜4人前</td>
+            <td data-label="品数">販売先で確認</td>
+            <td data-label="保存">冷凍</td>
+            <td data-label="料理">和洋折衷</td>
+            <td data-label="価格">公式サイトで確認</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+
+  <section id="osechi-by-type" class="osechi-section osechi-section--tinted">
+    <p class="osechi-section-label">CHOOSE BY NEED</p>
+    <h2>人数・条件・タイプから選ぶ</h2>
+    <div class="osechi-type-grid">
+      <a class="osechi-type-card" href="#osechi-hanakago"><strong>3人前・価格を抑えたい</strong><span>板前魂「花籠」</span></a>
+      <a class="osechi-type-card" href="#osechi-kamitakasago"><strong>3〜4人・和洋折衷</strong><span>Oisix「上高砂」</span></a>
+      <a class="osechi-type-card" href="#osechi-hakata"><strong>4〜5人・冷凍</strong><span>博多久松「博多」</span></a>
+      <a class="osechi-type-card" href="#osechi-omotenashi"><strong>4〜5人・冷蔵</strong><span>千賀屋「おもてなし」</span></a>
+      <a class="osechi-type-card" href="#osechi-kiwami"><strong>7〜8人・大人数</strong><span>匠本舗「極」</span></a>
+    </div>
+  </section>
+
+  <section id="osechi-ranking" class="osechi-section">
+    <p class="osechi-section-label">TOP 5</p>
+    <h2>おすすめおせち1位〜5位を詳しく紹介</h2>
+
+    <article id="osechi-kiwami" class="osechi-product">
+      <header class="osechi-product__header"><span class="osechi-rank osechi-rank--large">1位</span><div><p>匠本舗</p><h3>京都祇園料亭「岩元」監修六段重「極」</h3></div></header>
+      <div class="osechi-product__body">
+        <figure class="osechi-product__media"><img src="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2026/08/2027おせち匠本舗極.jpg" alt="匠本舗 京都祇園料亭 岩元監修六段重 極" width="450" height="450" loading="lazy" decoding="async" /></figure>
+        <div class="osechi-product__content">
+          <p class="osechi-product__catch">親戚や家族が集まる、7〜8人のお正月に向く冷蔵六段重です。</p>
+          <dl class="osechi-specs"><div><dt>人数</dt><dd>7〜8人前</dd></div><div><dt>品数</dt><dd>80品</dd></div><div><dt>保存</dt><dd>冷蔵</dd></div><div><dt>価格</dt><dd>公式サイトで確認</dd></div></dl>
+          <div class="osechi-points"><h4>選ぶポイント</h4><ul><li>大人数で分けやすい六段重</li><li>解凍の手間がない冷蔵おせち</li></ul></div>
+          <div class="osechi-caution"><strong>確認点</strong><p>2027年版は80品目。価格・在庫・早割期限は変動するため、予約前に公式サイトで最新条件をご確認ください。</p></div>
+        </div>
+      </div>
+      <div class="osechi-cta-group">
+        <a class="osechi-button osechi-button--official" href="https://px.a8.net/svt/ejp?a8mat=2ZNPW2+90HR7U+1ZWM+HUKPU&amp;a8ejpredirect=https%3A%2F%2Fskynet-c.jp%2Fgoods%2F260.html" target="_blank" rel="nofollow sponsored noopener">公式サイトで「極」の最新価格・在庫を確認する</a>
+        <img src="https://www15.a8.net/0.gif?a8mat=2ZNPW2+90HR7U+1ZWM+HUKPU" alt="" width="1" height="1" />
+        <img src="https://www16.a8.net/0.gif?a8mat=2ZNPW2+90HR7U+1ZWM+HUKPU" alt="" width="1" height="1" />
+      </div>
+    </article>
+
+    <article id="osechi-hakata" class="osechi-product">
+      <header class="osechi-product__header"><span class="osechi-rank osechi-rank--large">2位</span><div><p>博多久松</p><h3>和洋折衷本格料亭おせち「博多」</h3></div></header>
+      <div class="osechi-product__body">
+        <figure class="osechi-product__media"><img src="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2024/10/博多久松博多正方形2027-1280-1.jpg" alt="博多久松 和洋折衷本格料亭おせち 博多" width="450" height="300" loading="lazy" decoding="async" /></figure>
+        <div class="osechi-product__content">
+          <p class="osechi-product__catch">4〜5人で、和食と洋食の両方を楽しみたいご家庭の候補です。</p>
+          <dl class="osechi-specs"><div><dt>人数</dt><dd>4〜5人前</dd></div><div><dt>品数</dt><dd>50品</dd></div><div><dt>保存</dt><dd>冷凍</dd></div><div><dt>価格</dt><dd>販売先で確認</dd></div></dl>
+          <div class="osechi-points"><h4>選ぶポイント</h4><ul><li>和洋折衷の三段重</li><li>4〜5人で囲みやすい構成</li></ul></div>
+          <div class="osechi-caution"><strong>確認点</strong><p>Amazonと楽天市場では価格・ポイント・在庫・お届け条件が異なる場合があります。商品名と販売元を確認して選んでください。</p></div>
+        </div>
+      </div>
+      <div class="osechi-cta-group osechi-cta-group--marketplaces">
+        <a class="osechi-button osechi-button--amazon" href="https://amzn.to/3TMpo0M" target="_blank" rel="nofollow sponsored noopener">Amazonで「博多」を確認する</a>
+        <a class="osechi-button osechi-button--rakuten" href="https://a.r10.to/T3s569" target="_blank" rel="nofollow sponsored noopener">楽天市場で「博多」を確認する</a>
+      </div>
+    </article>
+
+    <article id="osechi-omotenashi" class="osechi-product">
+      <header class="osechi-product__header"><span class="osechi-rank osechi-rank--large">3位</span><div><p>千賀屋</p><h3>和風三段重「おもてなし」</h3></div></header>
+      <div class="osechi-product__body">
+        <figure class="osechi-product__media"><img src="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2026/08/2027おせち千賀屋おもてなし.jpg" alt="千賀屋 和風三段重 おもてなし" width="450" height="313" loading="lazy" decoding="async" /></figure>
+        <div class="osechi-product__content">
+          <p class="osechi-product__catch">解凍の手間をかけず、4〜5人で和風料理を楽しみたい方の候補です。</p>
+          <dl class="osechi-specs"><div><dt>人数</dt><dd>4〜5人前</dd></div><div><dt>品数</dt><dd>58品</dd></div><div><dt>保存</dt><dd>冷蔵</dd></div><div><dt>価格</dt><dd>販売先で確認</dd></div></dl>
+          <div class="osechi-points"><h4>選ぶポイント</h4><ul><li>盛り付け済みの冷蔵おせち</li><li>品数の多い和風三段重</li></ul></div>
+          <div class="osechi-caution"><strong>確認点</strong><p>配送地域・お届け日・キャンセル期限を販売先でご確認ください。</p></div>
+        </div>
+      </div>
+      <div class="osechi-cta-group osechi-cta-group--marketplaces">
+        <a class="osechi-button osechi-button--amazon" href="https://amzn.to/4hSRUHY" target="_blank" rel="nofollow sponsored noopener">Amazonで「おもてなし」を確認する</a>
+        <a class="osechi-button osechi-button--rakuten" href="https://a.r10.to/hkwOQR" target="_blank" rel="nofollow sponsored noopener">楽天市場で「おもてなし」を確認する</a>
+      </div>
+    </article>
+
+    <article id="osechi-hanakago" class="osechi-product">
+      <header class="osechi-product__header"><span class="osechi-rank osechi-rank--large">4位</span><div><p>板前魂</p><h3>和洋風三段重「花籠」</h3></div></header>
+      <div class="osechi-product__body">
+        <figure class="osechi-product__media"><img src="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2026/08/2027おせち板前魂花籠.jpg" alt="板前魂 和洋風三段重 花籠" width="450" height="450" loading="lazy" decoding="async" /></figure>
+        <div class="osechi-product__content">
+          <p class="osechi-product__catch">3人で食べやすく、1万円前後を目安に探す方の候補です。</p>
+          <dl class="osechi-specs"><div><dt>人数</dt><dd>3人前</dd></div><div><dt>品数</dt><dd>34品</dd></div><div><dt>保存</dt><dd>冷凍</dd></div><div><dt>価格</dt><dd>販売先で確認</dd></div></dl>
+          <div class="osechi-points"><h4>選ぶポイント</h4><ul><li>3人向けの和洋風三段重</li><li>比較的選びやすい価格帯</li></ul></div>
+          <div class="osechi-caution"><strong>確認点</strong><p>段階的な早割価格は期限が細かいため、予約日に適用される価格をご確認ください。</p></div>
+        </div>
+      </div>
+      <div class="osechi-cta-group osechi-cta-group--three">
+        <a class="osechi-button osechi-button--official" href="https://px.a8.net/svt/ejp?a8mat=3THM1R+DXBHVU+3P2A+1BMW42" target="_blank" rel="nofollow sponsored noopener">公式サイトで「花籠」を確認する</a>
+        <a class="osechi-button osechi-button--amazon" href="https://amzn.to/45g9myH" target="_blank" rel="nofollow sponsored noopener">Amazonで「花籠」を確認する</a>
+        <a class="osechi-button osechi-button--rakuten" href="https://a.r10.to/hPoC6S" target="_blank" rel="nofollow sponsored noopener">楽天市場で「花籠」を確認する</a>
+      </div>
+    </article>
+
+    <article id="osechi-kamitakasago" class="osechi-product">
+      <header class="osechi-product__header"><span class="osechi-rank osechi-rank--large">5位</span><div><p>Oisix</p><h3>和洋折衷三段重「上高砂」</h3></div></header>
+      <div class="osechi-product__body">
+        <figure class="osechi-product__media"><img src="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2026/07/2027おせちOisix上高砂-1280.jpg" alt="Oisix 和洋折衷三段重 上高砂" width="450" height="406" loading="lazy" decoding="async" /></figure>
+        <div class="osechi-product__content">
+          <p class="osechi-product__catch">3〜4人で、伝統的な料理と洋風料理の両方を楽しみたいご家庭の候補です。</p>
+          <dl class="osechi-specs"><div><dt>人数</dt><dd>3〜4人前</dd></div><div><dt>品数</dt><dd>販売先で確認</dd></div><div><dt>保存</dt><dd>冷凍</dd></div><div><dt>価格</dt><dd>公式サイトで確認</dd></div></dl>
+          <div class="osechi-points"><h4>選ぶポイント</h4><ul><li>和風と洋風を組み合わせた三段重</li><li>3〜4人の家族で選びやすい構成</li></ul></div>
+          <div class="osechi-caution"><strong>確認点</strong><p>元日に食べる場合は解凍時間を考慮し、適切なお届け日を選んでください。</p></div>
+        </div>
+      </div>
+      <div class="osechi-cta-group">
+        <a class="osechi-button osechi-button--official" href="https://px.a8.net/svt/ejp?a8mat=1TUXQF+3H1JKA+3RK+3H0LLU&amp;a8ejpredirect=https%3A%2F%2Fwww.oisix.com%2Fshop.osechi--takasago3__html.htm" target="_blank" rel="nofollow sponsored noopener">公式サイトで「上高砂」の最新価格・在庫を確認する</a>
+        <img src="https://www17.a8.net/0.gif?a8mat=1TUXQF+3H1JKA+3RK+3H0LLU" alt="" width="1" height="1" />
+        <img src="https://www16.a8.net/0.gif?a8mat=1TUXQF+3H1JKA+3RK+3H0LLU" alt="" width="1" height="1" />
+      </div>
+      <p class="osechi-related">ほかのOisixおせちも比較したい方は、<a href="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/oisixranking5/">2027年版Oisixおせち人気ランキング5選</a>も参考にしてください。</p>
+    </article>
+  </section>
+
+  <section id="osechi-how-to-choose" class="osechi-section osechi-section--tinted">
+    <p class="osechi-section-label">CHECK POINTS</p>
+    <h2>おせち選びで失敗しない7つのポイント</h2>
+    <ol class="osechi-check-list">
+      <li><strong>食べる人数：</strong>おせち以外の料理を用意するかも考えて量を選びます。</li>
+      <li><strong>冷蔵・冷凍：</strong>冷凍は解凍時間、冷蔵は受取後の保管場所を確認します。</li>
+      <li><strong>料理の種類：</strong>和風、洋風、和洋折衷から家族の好みに合うものを選びます。</li>
+      <li><strong>重箱の大きさ：</strong>冷蔵庫・冷凍庫に入るサイズか確認します。</li>
+      <li><strong>配送条件：</strong>お届け日、時間指定、配送対象外地域を確認します。</li>
+      <li><strong>変更・キャンセル：</strong>受付期限と条件を注文前に確認します。</li>
+      <li><strong>アレルギー：</strong>原材料・アレルゲン表示は必ず販売元の最新情報を確認します。</li>
+    </ol>
+  </section>
+
+  <section id="osechi-criteria" class="osechi-section">
+    <p class="osechi-section-label">POLICY</p>
+    <h2>ランキングの評価基準と根拠</h2>
+    <p>このランキングは、単純な価格順ではなく、人数と価格のバランス、料理内容、保存方法、準備のしやすさ、販売実績、公式情報の分かりやすさ、購入先の選択肢を総合して構成しています。</p>
+    <ul class="osechi-criteria-list"><li>人数・価格のバランス</li><li>品数・料理構成</li><li>冷蔵／冷凍と準備のしやすさ</li><li>各社での販売実績・人気</li><li>配送・購入条件の分かりやすさ</li></ul>
+    <p class="osechi-note">※各社内の人気・販売実績と、このサイトのおすすめ順位は別の基準です。商品仕様の確認日：2026年8月20日。</p>
+    <a class="osechi-text-link" href="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/2024ranking/">2027年正月用おせち通販ランキングの根拠を詳しく見る</a>
+  </section>
+
+  <section id="osechi-author" class="osechi-section osechi-author">
+    <p class="osechi-section-label">AUTHOR</p>
+    <h2>運営者について</h2>
+    <div class="osechi-author__body">
+      <figure class="osechi-author__image"><img src="https://xn--t8ja4cb2a1w127tbjntz7hygh.com/wp-content/uploads/2025/07/%E8%87%AA%E6%88%91%E3%83%97%E3%83%AD%E3%83%95%E3%82%A3%E3%83%BC%E3%83%AB%E3%82%B8%E3%83%96%E3%83%AA%E9%A2%A8.png" alt="運営者 おせちマスターJun" width="1024" height="1024" loading="lazy" decoding="async" /></figure>
+      <div><h3>おせちマスターJun</h3><p>2018年以来、おせち通販の比較・紹介記事を運営しています。Amazon Kindleでおせちに関する専門書を発行し、人数、料理内容、保存方法、価格などの公式情報を確認して、読者が選びやすい形に整理しています。</p><p class="osechi-note">掲載内容は販売元の公式情報と商品ページを確認し、読者が比較しやすい形に整理しています。</p></div>
+    </div>
+  </section>
+
+  <section id="osechi-faq" class="osechi-section">
+    <p class="osechi-section-label">FAQ</p>
+    <h2>おせち通販のよくある質問</h2>
+    <div class="osechi-faq-list">
+      <div class="osechi-faq-item"><h3>冷蔵と冷凍はどちらがよいですか？</h3><p>解凍の手間を省きたいなら冷蔵、早めに受け取って保管したい場合は冷凍が候補です。冷蔵庫・冷凍庫の空きと受取日も合わせて選んでください。</p></div>
+      <div class="osechi-faq-item"><h3>何人前を選べばよいですか？</h3><p>おせちだけを食べるか、雑煮や寿司なども用意するかで必要量が変わります。人数表示は目安として、料理内容と重箱サイズも確認してください。</p></div>
+      <div class="osechi-faq-item"><h3>公式サイト・Amazon・楽天市場のどこで買うべきですか？</h3><p>価格、在庫、ポイント、配送条件が異なる場合があります。各リンク先の商品名と販売元を確認し、条件を比較して選んでください。</p></div>
+      <div class="osechi-faq-item"><h3>ページに書かれた価格と違う場合は？</h3><p>価格や早割期限は変更されるため、購入手続き画面に表示される価格が優先されます。</p></div>
+      <div class="osechi-faq-item"><h3>いつまでに予約すればよいですか？</h3><p>締切前でも在庫状況により受付が終了する場合があります。希望商品が決まったら、在庫・配送日・キャンセル条件を確認して判断してください。</p></div>
+    </div>
+  </section>
+
+  <section id="osechi-final" class="osechi-section osechi-final">
+    <p class="osechi-section-label">FINAL CHECK</p>
+    <h2>5商品をもう一度比較して予約先を確認</h2>
+    <p>最後に、人数・保存方法・料理タイプをもう一度確認してください。価格、在庫、早割期限、配送条件は各販売先の商品ページで確認できます。</p>
+    <div class="osechi-final-grid">
+      <a href="#osechi-kiwami"><strong>7〜8人・冷蔵</strong><span>匠本舗「極」</span></a>
+      <a href="#osechi-hakata"><strong>4〜5人・冷凍</strong><span>博多久松「博多」</span></a>
+      <a href="#osechi-omotenashi"><strong>4〜5人・冷蔵</strong><span>千賀屋「おもてなし」</span></a>
+      <a href="#osechi-hanakago"><strong>3人・冷凍</strong><span>板前魂「花籠」</span></a>
+      <a href="#osechi-kamitakasago"><strong>3〜4人・冷凍</strong><span>Oisix「上高砂」</span></a>
+    </div>
+  </section>
+</div>
+
+
+</main></body></html>
