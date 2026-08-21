@@ -174,7 +174,18 @@ background: #BCBCBC;
 .osechi-alt-links, .osechi-related { margin: 16px 0 0 !important; font-size: .86rem; text-align: center; }.osechi-alt-links a, .osechi-related a, .osechi-text-link { color: var(--osechi-wine); font-weight: 700; }
 .osechi-check-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; margin: 0; padding-left: 1.5em; }.osechi-check-list li { padding: 5px 0; }
 .osechi-criteria-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0; list-style: none; }.osechi-criteria-list li { padding: 12px; background: var(--osechi-ivory); border-left: 3px solid var(--osechi-gold); }
-.osechi-author { padding: clamp(24px, 5vw, 44px); background: var(--osechi-ivory); border: 1px solid var(--osechi-border); }.osechi-author__body { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: start; }.osechi-author__image { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: #eee7da; border: 3px solid var(--osechi-gold-light); border-radius: 50%; }.osechi-author__image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.osechi-author { overflow: hidden; max-width: 860px; margin-right: auto; margin-left: auto; padding: 0 0 clamp(28px, 5vw, 44px); background: #fffdf8; border: 1px solid var(--osechi-border); border-bottom: 6px solid #e4b21d; }
+.osechi-author h2 { min-height: 0; margin: 0 0 30px; padding: 13px 20px; color: #4b321e; font-size: clamp(1.25rem, 2.4vw, 1.65rem); line-height: 1.4; background: #efb719; }
+.osechi-author h2::after { display: none; }
+.osechi-author__body { display: flex; flex-direction: column; align-items: center; gap: 0; padding: 0 clamp(24px, 6vw, 70px); }
+.osechi-author__body > p:empty, .osechi-author__body > br { display: none; }
+.osechi-author__image { width: clamp(160px, 24vw, 220px); margin: 0 auto 18px; overflow: hidden; aspect-ratio: 1 / 1; background: #eee7da; border: 3px solid var(--osechi-gold-light); border-radius: 50%; }
+.osechi-author__image img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.osechi-author__content { width: 100%; }
+.osechi-author__content h3 { position: relative; margin: 0 auto 34px; padding: 0 0 12px; font-size: 1.08rem; text-align: center; }
+.osechi-author__content h3::after { position: absolute; bottom: 0; left: 50%; width: 180px; height: 2px; content: ""; background: var(--osechi-gold-light); transform: translateX(-50%); }
+.osechi-author__content p { margin: 0 0 16px; }
+.osechi-author__content .osechi-note { color: var(--osechi-text); font-size: .95rem; }
 .osechi-faq-item { padding: 22px 0; border-bottom: 1px solid var(--osechi-border); }.osechi-faq-item:first-child { border-top: 1px solid var(--osechi-border); }.osechi-faq-item h3 { position: relative; padding-left: 34px; }.osechi-faq-item h3::before { position: absolute; left: 0; content: "Q"; color: var(--osechi-gold); font-family: Georgia, serif; font-size: 1.3rem; }.osechi-faq-item p { margin: 10px 0 0; padding-left: 34px; }
 .osechi-final { position: relative; overflow: hidden; padding: clamp(36px, 7vw, 70px); color: #fff; background: linear-gradient(135deg, #37100f, var(--osechi-wine-dark)); border: 1px solid var(--osechi-gold); }.osechi-final::before { position: absolute; top: -100px; right: -100px; width: 260px; height: 260px; content: ""; border: 1px solid rgba(232,215,166,.2); border-radius: 50%; }.osechi-final h2 { color: #fff; }.osechi-final-grid { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }.osechi-final-grid a { display: flex; flex-direction: column; padding: 18px 10px; color: var(--osechi-text) !important; text-align: center; text-decoration: none !important; background: var(--osechi-ivory); border-top: 3px solid var(--osechi-gold); }.osechi-final-grid span { font-size: .88rem; }
 .osechi-sp-only { display: none; }
@@ -212,7 +223,7 @@ background: #BCBCBC;
   .osechi-specs { grid-template-columns: 1fr; }
   .osechi-cta-group--marketplaces { grid-template-columns: 1fr; }
   .osechi-check-list, .osechi-criteria-list { grid-template-columns: 1fr; }
-  .osechi-author__body { grid-template-columns: 1fr; }.osechi-author__image { width: 130px; margin: 0 auto; }
+  .osechi-author__body { padding: 0 18px; }.osechi-author__image { width: 150px; }
   .osechi-final-grid { grid-template-columns: 1fr; }.osechi-final-grid a:last-child { grid-column: auto; }
 }
 @media (prefers-reduced-motion: reduce) { .osechi-button, .osechi-summary-card { transition: none; } }
