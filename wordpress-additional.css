@@ -156,6 +156,10 @@ background: #BCBCBC;
 .osechi-product__body--kiwami .osechi-product__content { grid-area: content; }
 .osechi-product__body--kiwami .osechi-product__media { grid-area: media; order: initial; }
 .osechi-product__body--kiwami .osechi-caution { grid-area: caution; margin-top: 0; }
+.osechi-product__body--kiwami > p:empty { display: none; }
+#osechi-kiwami .osechi-cta-group > p:empty { display: none; }
+#osechi-kiwami .osechi-cta-group > br { display: none; }
+#osechi-kiwami .osechi-cta-group { margin-top: 58px; }
 .osechi-product:nth-of-type(even) .osechi-product__media { order: 2; }
 .osechi-product__media { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: var(--osechi-cream); box-shadow: 14px 14px 0 var(--osechi-cream); }
 .osechi-product__media img { width: 100%; height: 100%; object-fit: cover; }
