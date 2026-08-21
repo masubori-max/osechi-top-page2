@@ -152,14 +152,14 @@ background: #BCBCBC;
 .osechi-product__header p { margin: 0; color: var(--osechi-muted); font-size: .86rem; }
 .osechi-product__header h3 { color: #fff; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; }.osechi-product__header p { color: var(--osechi-gold-light); }
 .osechi-product__body { display: grid; grid-template-columns: minmax(280px, 42%) 1fr; gap: clamp(24px, 4vw, 44px); align-items: start; }
-.osechi-product__body--kiwami { grid-template-columns: minmax(0, 1fr) minmax(260px, 42%); grid-template-areas: "content media" "caution caution"; gap: 24px clamp(28px, 4vw, 44px); }
-.osechi-product__body--kiwami .osechi-product__content { grid-area: content; }
-.osechi-product__body--kiwami .osechi-product__media { grid-area: media; order: initial; }
-.osechi-product__body--kiwami .osechi-caution { grid-area: caution; margin-top: 0; }
-.osechi-product__body--kiwami > p:empty { display: none; }
-#osechi-kiwami .osechi-cta-group > p:empty { display: none; }
-#osechi-kiwami .osechi-cta-group > br { display: none; }
-#osechi-kiwami .osechi-cta-group { margin-top: 58px; }
+.osechi-product__body--split-detail { grid-template-columns: minmax(0, 1fr) minmax(260px, 42%); grid-template-areas: "content media" "caution caution"; gap: 24px clamp(28px, 4vw, 44px); }
+.osechi-product__body--split-detail .osechi-product__content { grid-area: content; }
+.osechi-product__body--split-detail .osechi-product__media { grid-area: media; order: initial; }
+.osechi-product__body--split-detail .osechi-caution { grid-area: caution; margin-top: 0; }
+.osechi-product__body--split-detail > p:empty { display: none; }
+#osechi-kiwami .osechi-cta-group > p:empty, #osechi-hakata .osechi-cta-group > p:empty, #osechi-omotenashi .osechi-cta-group > p:empty, #osechi-hanakago .osechi-cta-group > p:empty, #osechi-kamitakasago .osechi-cta-group > p:empty { display: none; }
+#osechi-kiwami .osechi-cta-group > br, #osechi-hakata .osechi-cta-group > br, #osechi-omotenashi .osechi-cta-group > br, #osechi-hanakago .osechi-cta-group > br, #osechi-kamitakasago .osechi-cta-group > br { display: none; }
+#osechi-kiwami .osechi-cta-group, #osechi-hakata .osechi-cta-group, #osechi-omotenashi .osechi-cta-group, #osechi-hanakago .osechi-cta-group, #osechi-kamitakasago .osechi-cta-group { margin-top: 58px; }
 .osechi-product:nth-of-type(even) .osechi-product__media { order: 2; }
 .osechi-product__media { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: var(--osechi-cream); box-shadow: 14px 14px 0 var(--osechi-cream); }
 .osechi-product__media img { width: 100%; height: 100%; object-fit: cover; }
@@ -184,7 +184,7 @@ background: #BCBCBC;
   .osechi-summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.osechi-summary-image-card, .osechi-summary-card { grid-column: span 1; }.osechi-summary-card:last-child { grid-column: 1 / -1; }
   .osechi-type-grid { grid-template-columns: repeat(2, 1fr); }
   .osechi-type-card:last-child { grid-column: 1 / -1; }
-  .osechi-product__body { grid-template-columns: 1fr; }.osechi-product__body--kiwami { grid-template-areas: "media" "content" "caution"; }.osechi-product:nth-of-type(even) .osechi-product__media { order: initial; }.osechi-product__media { max-width: 520px; margin: 0 auto; }
+  .osechi-product__body { grid-template-columns: 1fr; }.osechi-product__body--split-detail { grid-template-areas: "media" "content" "caution"; }.osechi-product:nth-of-type(even) .osechi-product__media { order: initial; }.osechi-product__media { max-width: 520px; margin: 0 auto; }
   .osechi-cta-group--three { grid-template-columns: 1fr; }
   .osechi-final-grid { grid-template-columns: repeat(2, 1fr); }.osechi-final-grid a:last-child { grid-column: 1 / -1; }
 }
