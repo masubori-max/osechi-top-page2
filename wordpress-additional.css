@@ -1,4 +1,3 @@
-
 <!--トップページタイトル非表示 -->
 .home .entry-title {
   display: none;
@@ -22,10 +21,11 @@ background: #F1F1F1;
 background: #BCBCBC;
 }
 
-<!--箇条書きの色 -->
-.cps-post-main ul > li:before,
-.cps-post-main ol > li:before {
-    background-color: #006400!important;
+/* 番号付きリストの番号部分を緑にする */
+.cps-post-main ol > li::before {
+    background: #006400 !important;
+    background-color: #006400 !important;
+    color: #ffffff !important;
 }
 
 /* トップページにある一般的な目次を非表示 */
@@ -87,6 +87,17 @@ background: #BCBCBC;
 .home .share-top,
 .home article > .clearfix,
 .home article > .c--labeling-act { display: none !important; }
+/* グローバルメニュー直後からヘッダー画像を表示する */
+.page-id-30806 #contents,
+.home #contents { margin-top: 0 !important; padding-top: 0 !important; }
+.page-id-30806 .cps-post-box,
+.page-id-30806 .cps-post-main,
+.home .cps-post-box,
+.home .cps-post-main { margin-top: 0 !important; padding-top: 0 !important; }
+.page-id-30806 .cps-post-main > p:first-child,
+.page-id-30806 .osechi-page > p:first-child,
+.home .cps-post-main > p:first-child,
+.home .osechi-page > p:first-child { display: none !important; }
 .osechi-visually-hidden { position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
 .osechi-page h2 { position: relative; display: flex; align-items: center; justify-content: center; min-height: 76px; margin: 0 0 1.4em; padding: 12px 0 18px; color: var(--osechi-wine-dark); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; font-size: clamp(1.55rem, 3vw, 2.15rem); line-height: 1.45; text-align: center; border-bottom: 0; }
 .osechi-page h2::after { position: absolute; bottom: 0; left: 50%; width: 72px; height: 2px; content: ""; background: linear-gradient(90deg, transparent, var(--osechi-gold), transparent); transform: translateX(-50%); }
@@ -111,6 +122,7 @@ background: #BCBCBC;
 .osechi-button:hover { filter: brightness(1.08); transform: translateY(-1px); }
 .osechi-button:focus-visible, .osechi-page a:focus-visible { outline: 3px solid #2673d9; outline-offset: 3px; }
 .osechi-button--primary, .osechi-button--official { background: var(--osechi-wine); border-color: var(--osechi-gold); }
+.osechi-button--articles { background: #218c2f; border-color: #197226; }
 .osechi-button--amazon { color: #241b0e !important; background: #f3b33d; }
 .osechi-button--rakuten { background: #a81324; }
 .osechi-summary-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; }
@@ -160,6 +172,9 @@ background: #BCBCBC;
 #osechi-kiwami .osechi-cta-group > p:empty, #osechi-hakata .osechi-cta-group > p:empty, #osechi-omotenashi .osechi-cta-group > p:empty, #osechi-hanakago .osechi-cta-group > p:empty, #osechi-kamitakasago .osechi-cta-group > p:empty { display: none; }
 #osechi-kiwami .osechi-cta-group > br, #osechi-hakata .osechi-cta-group > br, #osechi-omotenashi .osechi-cta-group > br, #osechi-hanakago .osechi-cta-group > br, #osechi-kamitakasago .osechi-cta-group > br { display: none; }
 #osechi-kiwami .osechi-cta-group, #osechi-hakata .osechi-cta-group, #osechi-omotenashi .osechi-cta-group, #osechi-hanakago .osechi-cta-group, #osechi-kamitakasago .osechi-cta-group { margin-top: 58px; }
+/* 「極」の公式バナーと関連記事バナーの間隔は1行分にする */
+#osechi-kiwami .osechi-cta-group { row-gap: 1em; }
+#osechi-kiwami .osechi-cta-group > img[width="1"][height="1"] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .osechi-product:nth-of-type(even) .osechi-product__media { order: 2; }
 .osechi-product__media { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: var(--osechi-cream); box-shadow: 14px 14px 0 var(--osechi-cream); }
 .osechi-product__media img { width: 100%; height: 100%; object-fit: cover; }
@@ -227,5 +242,70 @@ background: #BCBCBC;
   .osechi-check-list, .osechi-criteria-list { grid-template-columns: 1fr; }
   .osechi-author__body { padding: 0 18px; }.osechi-author__image { width: 150px; }
   .osechi-final-grid { grid-template-columns: 1fr; }.osechi-final-grid a:last-child { grid-column: auto; }
+
+  /* おせちトップページでは、スマホでも親メニュー4項目を常時表示する */
+  .page-id-30806 #nav-container,
+  .page-id-30806 #nav-container .scroll-content,
+  .page-id-30806 #nav-container nav,
+  .page-id-30806 #drawernav,
+  .page-id-30806 #drawernav .fixed-content,
+  .home #nav-container,
+  .home #nav-container .scroll-content,
+  .home #nav-container nav,
+  .home #drawernav,
+  .home #drawernav .fixed-content { position: static !important; display: block !important; width: 100% !important; height: auto !important; overflow: visible !important; opacity: 1 !important; visibility: visible !important; transform: none !important; }
+  .page-id-30806 #drawernav .menu-box,
+  .page-id-30806 #nav-container .menu-box,
+  .home #nav-container .menu-box,
+  .home #drawernav .menu-box { display: flex !important; align-items: stretch; justify-content: center; width: 100% !important; min-height: 44px; margin: 0 !important; padding: 0 !important; list-style: none; background: #fff; border-bottom: 1px solid #ded5c6; }
+  .page-id-30806 #drawernav .menu-box > li,
+  .page-id-30806 #nav-container .menu-box > li,
+  .home #nav-container .menu-box > li,
+  .home #drawernav .menu-box > li { display: block !important; flex: 1 1 25%; margin: 0 !important; padding: 0 !important; }
+  .page-id-30806 #drawernav .menu-box > li + li,
+  .page-id-30806 #nav-container .menu-box > li + li,
+  .home #nav-container .menu-box > li + li,
+  .home #drawernav .menu-box > li + li { border-left: 1px solid #ded5c6; }
+  .page-id-30806 #drawernav .menu-box > li > a,
+  .page-id-30806 #nav-container .menu-box > li > a,
+  .home #nav-container .menu-box > li > a,
+  .home #drawernav .menu-box > li > a { display: flex !important; align-items: center; justify-content: center; min-height: 44px; padding: 8px 3px !important; color: #332f2c !important; font-size: 12px; line-height: 1.25; text-align: center; text-decoration: none !important; white-space: nowrap; }
+  .page-id-30806 #drawernav .sub-menu,
+  .page-id-30806 #nav-container .sub-menu,
+  .home #nav-container .sub-menu,
+  .home #drawernav .sub-menu { display: none !important; }
 }
 @media (prefers-reduced-motion: reduce) { .osechi-button, .osechi-summary-card { transition: none; } }
+@media (max-width: 600px) {
+  /* 投稿ページでも親メニュー4項目を常時表示する */
+  .single #nav-container,
+  .single #nav-container .scroll-content,
+  .single #nav-container nav,
+  .single #drawernav,
+  .single #drawernav .fixed-content,
+  .single-post #nav-container,
+  .single-post #nav-container .scroll-content,
+  .single-post #nav-container nav,
+  .single-post #drawernav,
+  .single-post #drawernav .fixed-content { position: static !important; display: block !important; width: 100% !important; height: auto !important; overflow: visible !important; opacity: 1 !important; visibility: visible !important; transform: none !important; }
+  .single #drawernav .menu-box,
+  .single #nav-container .menu-box,
+  .single-post #drawernav .menu-box,
+  .single-post #nav-container .menu-box { display: flex !important; align-items: stretch; justify-content: center; width: 100% !important; min-height: 44px; margin: 0 !important; padding: 0 !important; list-style: none; background: #fff; border-bottom: 1px solid #ded5c6; }
+  .single #drawernav .menu-box > li,
+  .single #nav-container .menu-box > li,
+  .single-post #drawernav .menu-box > li,
+  .single-post #nav-container .menu-box > li { display: block !important; flex: 1 1 25%; margin: 0 !important; padding: 0 !important; }
+  .single #drawernav .menu-box > li + li,
+  .single #nav-container .menu-box > li + li,
+  .single-post #drawernav .menu-box > li + li,
+  .single-post #nav-container .menu-box > li + li { border-left: 1px solid #ded5c6; }
+  .single #drawernav .menu-box > li > a,
+  .single #nav-container .menu-box > li > a,
+  .single-post #drawernav .menu-box > li > a,
+  .single-post #nav-container .menu-box > li > a { display: flex !important; align-items: center; justify-content: center; min-height: 44px; padding: 8px 3px !important; color: #332f2c !important; font-size: 12px; line-height: 1.25; text-align: center; text-decoration: none !important; white-space: nowrap; }
+  .single #drawernav .sub-menu,
+  .single #nav-container .sub-menu,
+  .single-post #drawernav .sub-menu,
+  .single-post #nav-container .sub-menu { display: none !important; }
+}
