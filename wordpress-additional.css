@@ -172,8 +172,7 @@ background: #BCBCBC;
 #osechi-kiwami .osechi-cta-group > p:empty, #osechi-hakata .osechi-cta-group > p:empty, #osechi-omotenashi .osechi-cta-group > p:empty, #osechi-hanakago .osechi-cta-group > p:empty, #osechi-kamitakasago .osechi-cta-group > p:empty { display: none; }
 #osechi-kiwami .osechi-cta-group > br, #osechi-hakata .osechi-cta-group > br, #osechi-omotenashi .osechi-cta-group > br, #osechi-hanakago .osechi-cta-group > br, #osechi-kamitakasago .osechi-cta-group > br { display: none; }
 #osechi-kiwami .osechi-cta-group, #osechi-hakata .osechi-cta-group, #osechi-omotenashi .osechi-cta-group, #osechi-hanakago .osechi-cta-group, #osechi-kamitakasago .osechi-cta-group { margin-top: 58px; }
-/* 「極」の公式バナーと関連記事バナーの間隔は1行分にする */
-#osechi-kiwami .osechi-cta-group { row-gap: 1em; }
+/* 「極」の公式バナー内では計測画像をレイアウトから除外する */
 #osechi-kiwami .osechi-cta-group > img[width="1"][height="1"] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 .osechi-product:nth-of-type(even) .osechi-product__media { order: 2; }
 .osechi-product__media { margin: 0; overflow: hidden; aspect-ratio: 1 / 1; background: var(--osechi-cream); box-shadow: 14px 14px 0 var(--osechi-cream); }
@@ -206,6 +205,58 @@ background: #BCBCBC;
 .osechi-faq-item { padding: 22px 0; border-bottom: 1px solid var(--osechi-border); }.osechi-faq-item:first-child { border-top: 1px solid var(--osechi-border); }.osechi-faq-item h3 { position: relative; padding-left: 34px; }.osechi-faq-item h3::before { position: absolute; left: 0; content: "Q"; color: var(--osechi-gold); font-family: Georgia, serif; font-size: 1.3rem; }.osechi-faq-item p { margin: 10px 0 0; padding-left: 34px; }
 .osechi-final { position: relative; overflow: hidden; padding: clamp(36px, 7vw, 70px); color: #fff; background: linear-gradient(135deg, #37100f, var(--osechi-wine-dark)); border: 1px solid var(--osechi-gold); }.osechi-final::before { position: absolute; top: -100px; right: -100px; width: 260px; height: 260px; content: ""; border: 1px solid rgba(232,215,166,.2); border-radius: 50%; }.osechi-final h2 { color: #fff; }.osechi-final-grid { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }.osechi-final-grid a { display: flex; flex-direction: column; padding: 18px 10px; color: var(--osechi-text) !important; text-align: center; text-decoration: none !important; background: var(--osechi-ivory); border-top: 3px solid var(--osechi-gold); }.osechi-final-grid span { font-size: .88rem; }
 .osechi-sp-only { display: none; }
+
+/* 2026-10-25：画像見本に合わせた「極」と匠本舗の詳細記事導線 */
+#osechi-kiwami .osechi-product__header { min-height: 160px; margin: calc(-1 * clamp(24px, 5vw, 46px)) calc(-1 * clamp(24px, 5vw, 46px)) 34px; }
+#osechi-kiwami .osechi-product__header h3 { margin: 30px 0 0; padding: 6px 8px; border-bottom: 3px double var(--osechi-gold); }
+#osechi-kiwami .osechi-product__catch { margin: 16px 0 76px; font-size: 14px; }
+#osechi-kiwami .osechi-points h4 { padding-left: 12px; border-left: 2px solid var(--osechi-gold); font-weight: 400; }
+#osechi-kiwami .osechi-points ul { list-style: disc; }
+#osechi-kiwami .osechi-points li { padding-left: 0; }
+#osechi-kiwami .osechi-points li::before { display: none; }
+#osechi-kiwami .osechi-caution { display: grid; grid-template-columns: 94px minmax(0, 1fr); grid-template-areas: "label text"; align-items: stretch; width: min(100%, 770px); margin: 8px auto 0; padding: 0; background: transparent; border: 0; }
+#osechi-kiwami .osechi-kiwami-caution-label,
+#osechi-kiwami .osechi-caution > strong { grid-area: label; margin: 0; padding: 26px 12px 0 0; font-size: 14px; }
+#osechi-kiwami .osechi-kiwami-caution-text,
+#osechi-kiwami .osechi-caution > p:not(:empty) { grid-area: text; display: flex; align-items: center; min-width: 0; min-height: 124px; margin: 0 !important; padding: 22px 10px !important; font-size: 12px; overflow-wrap: anywhere; background: #fff9e9; border-left: 2px solid var(--osechi-gold); }
+#osechi-kiwami .osechi-kiwami-caution-label > p,
+#osechi-kiwami .osechi-kiwami-caution-text > p { margin: 0 !important; padding: 0 !important; }
+/* WordPressの自動整形で生じる空段落・改行をグリッドの項目にしない */
+#osechi-kiwami .osechi-caution > p:empty,
+#osechi-kiwami .osechi-caution > br,
+#osechi-kiwami .osechi-product__header > p:empty,
+#osechi-kiwami .osechi-product__header > br { display: none !important; }
+#osechi-kiwami .osechi-kiwami-prices { width: min(100%, 380px); margin: 24px auto 0; }
+#osechi-kiwami .osechi-early-price-table { width: 100%; margin: 0; border-collapse: collapse; table-layout: fixed; }
+#osechi-kiwami .osechi-early-price-table th,
+#osechi-kiwami .osechi-early-price-table td { padding: 7px 8px; font-size: 14px; text-align: center; border: 1px solid #ccc; background: #fff; }
+#osechi-kiwami .osechi-kiwami-official { grid-template-columns: minmax(0, 520px); margin-top: 48px; }
+#osechi-kiwami .osechi-kiwami-official .osechi-button { min-height: 44px; padding: 10px 12px; font-size: 16px; }
+#osechi-kiwami .osechi-kiwami-articles { display: grid; grid-template-columns: minmax(0, 690px); justify-content: center; gap: 44px; margin-top: 100px; }
+#osechi-kiwami .osechi-kiwami-articles .osechi-button { flex-wrap: wrap; gap: 0 .5em; width: 100%; min-height: 56px; padding: 10px 16px; font-size: clamp(18px, 2.4vw, 26px); }
+#osechi-kiwami .osechi-kiwami-articles .osechi-button span { white-space: nowrap; }
+#osechi-kiwami .osechi-kiwami-article { min-width: 0; margin: 0; }
+#osechi-kiwami .osechi-kiwami-article > p,
+#osechi-kiwami .osechi-kiwami-articles > p { margin: 0 !important; padding: 0 !important; }
+#osechi-kiwami .osechi-kiwami-article > br,
+#osechi-kiwami .osechi-kiwami-article > p:empty,
+#osechi-kiwami .osechi-kiwami-articles > br,
+#osechi-kiwami .osechi-kiwami-articles > p:empty { display: none; }
+@media (max-width: 800px) {
+  #osechi-kiwami .osechi-product__catch { margin: 12px 0 28px; font-size: 16px; }
+}
+@media (max-width: 600px) {
+  #osechi-kiwami .osechi-product__header { min-height: 130px; margin: -18px -18px 24px; }
+  #osechi-kiwami .osechi-product__header h3 { margin-top: 12px; font-size: 18px; }
+  #osechi-kiwami .osechi-caution { grid-template-columns: 1fr; grid-template-areas: "label" "text"; gap: 8px; }
+  #osechi-kiwami .osechi-kiwami-caution-label,
+  #osechi-kiwami .osechi-caution > strong { padding: 0; }
+  #osechi-kiwami .osechi-kiwami-caution-text,
+  #osechi-kiwami .osechi-caution > p:not(:empty) { min-height: 0; padding: 16px !important; font-size: 13px; }
+  #osechi-kiwami .osechi-kiwami-official { margin-top: 32px; }
+  #osechi-kiwami .osechi-kiwami-articles { gap: 28px; margin-top: 60px; }
+  #osechi-kiwami .osechi-kiwami-articles .osechi-button { min-height: 56px; padding: 12px 10px; font-size: 18px; }
+}
 
 @media (max-width: 800px) {
   .osechi-page { font-size: 16px; }
