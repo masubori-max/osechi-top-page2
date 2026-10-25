@@ -232,7 +232,7 @@ background: #BCBCBC;
 #osechi-kiwami .osechi-early-price-table td { padding: 7px 8px; font-size: 14px; text-align: center; border: 1px solid #ccc; background: #fff; }
 #osechi-kiwami .osechi-kiwami-official { grid-template-columns: minmax(0, 520px); margin-top: 48px; }
 #osechi-kiwami .osechi-kiwami-official .osechi-button { min-height: 44px; padding: 10px 12px; font-size: 16px; }
-#osechi-kiwami .osechi-kiwami-articles { display: grid; grid-template-columns: minmax(0, 520px); justify-content: center; gap: 44px; margin-top: 100px; }
+#osechi-kiwami .osechi-kiwami-articles { display: grid; grid-template-columns: minmax(0, 520px); justify-content: center; gap: 44px; margin-top: 44px; }
 #osechi-kiwami .osechi-kiwami-articles .osechi-button { position: relative; display: grid; flex-wrap: wrap; gap: 0 .5em; width: 100%; min-height: 44px; padding: 0; font-size: 16px; }
 /* 公式バナーと同じ文章・文字寸法で高さだけを測り、表示ラベルは従来のフォントを維持する */
 #osechi-kiwami .osechi-kiwami-articles .osechi-button::before { grid-area: 1 / 1; content: '公式サイトで「極」の最新価格・在庫を確認する'; visibility: hidden; padding: 10px 12px; font-size: 16px; line-height: 1.5; white-space: normal; }
@@ -257,9 +257,25 @@ background: #BCBCBC;
   #osechi-kiwami .osechi-kiwami-caution-text,
   #osechi-kiwami .osechi-caution > p:not(:empty) { min-height: 0; padding: 16px !important; font-size: 13px; }
   #osechi-kiwami .osechi-kiwami-official { margin-top: 32px; }
-  #osechi-kiwami .osechi-kiwami-articles { gap: 28px; margin-top: 60px; }
+  #osechi-kiwami .osechi-kiwami-articles { gap: 28px; margin-top: 28px; }
   #osechi-kiwami .osechi-kiwami-articles .osechi-button { min-height: 44px; padding: 0; font-size: 16px; }
   #osechi-kiwami .osechi-kiwami-articles .osechi-button::before { content: '公式サイトで「極」の最新価格・在庫を確認'; }
+}
+
+/* 博多の購入先バナー下：舞鶴の詳細記事バナー専用 */
+#osechi-hakata .osechi-hakata-articles { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(220px, calc((100% - 12px) / 2)); justify-content: center; margin-top: 44px; }
+#osechi-hakata .osechi-hakata-articles .osechi-button { position: relative; display: grid; width: 100%; min-height: 48px; padding: 0; font-size: 16px; }
+#osechi-hakata .osechi-hakata-articles .osechi-button::before { grid-area: 1 / 1; content: 'Amazonで「博多」を確認する'; visibility: hidden; padding: 12px 22px; font-size: 17px; line-height: 1.5; white-space: normal; }
+#osechi-hakata .osechi-hakata-banner-label { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center; align-items: center; justify-content: center; gap: 0 .5em; padding: 0; }
+#osechi-hakata .osechi-hakata-banner-label > span { white-space: nowrap; }
+#osechi-hakata .osechi-hakata-articles > p { margin: 0 !important; padding: 0 !important; }
+#osechi-hakata .osechi-hakata-articles > br, #osechi-hakata .osechi-hakata-articles > p:empty { display: none; }
+@media (max-width: 800px) {
+  #osechi-hakata .osechi-hakata-articles .osechi-button::before { font-size: 16px; }
+}
+@media (max-width: 600px) {
+  #osechi-hakata .osechi-hakata-articles { grid-template-columns: 1fr; margin-top: 28px; }
+  #osechi-hakata .osechi-hakata-articles .osechi-button::before { content: 'Amazonで「博多」を確認する'; }
 }
 
 @media (max-width: 800px) {
