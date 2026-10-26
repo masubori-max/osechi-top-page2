@@ -214,16 +214,7 @@ background: #BCBCBC;
 #osechi-kiwami .osechi-points ul { list-style: disc; }
 #osechi-kiwami .osechi-points li { padding-left: 0; }
 #osechi-kiwami .osechi-points li::before { display: none; }
-#osechi-kiwami .osechi-caution { display: grid; grid-template-columns: 94px minmax(0, 1fr); grid-template-areas: "label text"; align-items: stretch; width: min(100%, 770px); margin: 8px auto 0; padding: 0; background: transparent; border: 0; }
-#osechi-kiwami .osechi-kiwami-caution-label,
-#osechi-kiwami .osechi-caution > strong { grid-area: label; margin: 0; padding: 26px 12px 0 0; font-size: 14px; }
-#osechi-kiwami .osechi-kiwami-caution-text,
-#osechi-kiwami .osechi-caution > p:not(:empty) { grid-area: text; display: flex; align-items: center; min-width: 0; min-height: 124px; margin: 0 !important; padding: 22px 10px !important; font-size: 12px; overflow-wrap: anywhere; background: #fff9e9; border-left: 2px solid var(--osechi-gold); }
-#osechi-kiwami .osechi-kiwami-caution-label > p,
-#osechi-kiwami .osechi-kiwami-caution-text > p { margin: 0 !important; padding: 0 !important; }
 /* WordPressの自動整形で生じる空段落・改行をグリッドの項目にしない */
-#osechi-kiwami .osechi-caution > p:empty,
-#osechi-kiwami .osechi-caution > br,
 #osechi-kiwami .osechi-product__header > p:empty,
 #osechi-kiwami .osechi-product__header > br { display: none !important; }
 #osechi-kiwami .osechi-kiwami-prices { width: min(100%, 380px); margin: 24px auto 0; }
@@ -251,11 +242,6 @@ background: #BCBCBC;
 @media (max-width: 600px) {
   #osechi-kiwami .osechi-product__header { min-height: 130px; margin: -18px -18px 24px; }
   #osechi-kiwami .osechi-product__header h3 { margin-top: 12px; font-size: 18px; }
-  #osechi-kiwami .osechi-caution { grid-template-columns: 1fr; grid-template-areas: "label" "text"; gap: 8px; }
-  #osechi-kiwami .osechi-kiwami-caution-label,
-  #osechi-kiwami .osechi-caution > strong { padding: 0; }
-  #osechi-kiwami .osechi-kiwami-caution-text,
-  #osechi-kiwami .osechi-caution > p:not(:empty) { min-height: 0; padding: 16px !important; font-size: 13px; }
   #osechi-kiwami .osechi-kiwami-official { margin-top: 32px; }
   #osechi-kiwami .osechi-kiwami-articles { gap: 28px; margin-top: 28px; }
   #osechi-kiwami .osechi-kiwami-articles .osechi-button { min-height: 44px; padding: 0; font-size: 16px; }
