@@ -380,3 +380,8 @@ background: #BCBCBC;
   .single-post #drawernav .sub-menu,
   .single-post #nav-container .sub-menu { display: none !important; }
 }
+@media (max-width: 800px) {
+  #osechi-ranking .osechi-product__body--split-detail > .osechi-product__media {
+    width: 100%;
+  }
+}
