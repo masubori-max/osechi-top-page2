@@ -249,7 +249,7 @@ background: #BCBCBC;
 }
 
 /* 博多の購入先バナー下：舞鶴の詳細記事バナー専用 */
-#osechi-hakata .osechi-hakata-articles { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(220px, calc((100% - 12px) / 2)); justify-content: center; margin-top: 44px; }
+#osechi-hakata .osechi-hakata-articles { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(220px, calc((100% - 12px) / 2)); row-gap: 24px; justify-content: center; margin-top: 44px; }
 #osechi-hakata .osechi-hakata-articles .osechi-button { position: relative; display: grid; width: 100%; min-height: 48px; padding: 0; font-size: 16px; }
 #osechi-hakata .osechi-hakata-articles .osechi-button::before { grid-area: 1 / 1; content: 'Amazonで「博多」を確認する'; visibility: hidden; padding: 12px 22px; font-size: 17px; line-height: 1.5; white-space: normal; }
 #osechi-hakata .osechi-hakata-banner-label { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-content: center; align-items: center; justify-content: center; gap: 0 .5em; padding: 0; }
